@@ -1,0 +1,10 @@
+.rowT::after{
+   
+    content:"\a";
+    white-space: pre;
+    
+}
+
+.content{
+    text-align: left;
+}

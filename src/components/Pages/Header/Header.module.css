@@ -1,0 +1,21 @@
+.photo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .alignContent{
+      display: flex;
+      flex-direction: column;
+      margin-left: 2rem;
+      margin-top: 2rem;
+  }
+
+  .push{
+      margin-left: auto;
+  }
+
+  .header{
+    background-color:white;
+    
+
+}

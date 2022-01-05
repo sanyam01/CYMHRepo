@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef }  from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,7 +8,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -35,7 +35,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUpFormMaterial = () => {
+const LoginFormMaterial = (propsm) => {
+
+    const nameRef = useRef("");
+    const addressRef = useRef("");
+    const orgRef = useRef("");
+    const messageRef = useRef("");
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        console.log("Form has been submitted");
+    
+        const messageInfo = {
+    
+          name: nameRef.current.value,
+          address: addressRef.current.value,
+          organisation: orgRef.current.value,
+          message: messageRef.current.value,
+        };
+    
+        props.onAddMessage(messageInfo);
+      };
 
   const classes = useStyles();
 
@@ -44,36 +64,14 @@ const SignUpFormMaterial = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <LockOpenOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+         Login 
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -97,12 +95,7 @@ const SignUpFormMaterial = () => {
                 autoComplete="current-password"
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
+           
           </Grid>
           <Button
             type="submit"
@@ -110,13 +103,14 @@ const SignUpFormMaterial = () => {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onSubmit = {submitHandler}
           >
-            Sign Up
+            Login
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
-                Already have an account? Sign in
+               Forgot Password?
               </Link>
             </Grid>
           </Grid>
@@ -129,4 +123,4 @@ const SignUpFormMaterial = () => {
   );
 };
 
-export default SignUpFormMaterial;
+export default LoginFormMaterial;

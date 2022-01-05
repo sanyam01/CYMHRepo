@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import LoginForm from "../../Forms/LoginForm";
+import LoginFormMaterial from "../../Forms/LoginFormMaterial";
 
 const Login = () => {
 
@@ -9,7 +10,9 @@ const Login = () => {
       };
 
     return <Fragment> 
-        <LoginForm onAddMessage = {onAddMessageCall}/>
+        <LoginFormMaterial onAddMessage = {onAddMessageCall}/>
+        
+
 
     </Fragment>
 

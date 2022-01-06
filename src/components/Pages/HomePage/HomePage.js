@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <Fragment>
 
-    <Header/>
+   
       <div className={classes.header}>
         <Button name="Home" id="home" />
         <Button name="About" id="about" />

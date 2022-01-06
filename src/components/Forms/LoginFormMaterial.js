@@ -1,33 +1,32 @@
-import React, { useRef }  from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Copyright from './Copyright';
-
+import React, { useRef } from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import LockOpenOutlinedIcon from "@material-ui/icons/LockOpenOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Copyright from "./Copyright";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -35,27 +34,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LoginFormMaterial = (propsm) => {
+const LoginFormMaterial = (props) => {
+  const nameRef = useRef("");
+  const addressRef = useRef("");
+  const orgRef = useRef("");
+  const messageRef = useRef("");
 
-    const nameRef = useRef("");
-    const addressRef = useRef("");
-    const orgRef = useRef("");
-    const messageRef = useRef("");
+  const submitHandler = (event) => {
+   // event.preventDefault();
+    console.log("Form has been submitted");
 
-    const submitHandler = (event) => {
-        event.preventDefault();
-        console.log("Form has been submitted");
-    
-        const messageInfo = {
-    
-          name: nameRef.current.value,
-          address: addressRef.current.value,
-          organisation: orgRef.current.value,
-          message: messageRef.current.value,
-        };
-    
-        props.onAddMessage(messageInfo);
-      };
+    const messageInfo = {
+      name: nameRef.current.value,
+      address: addressRef.current.value,
+      organisation: orgRef.current.value,
+      message: messageRef.current.value,
+    };
+
+    props.onAddMessage(messageInfo);
+  };
 
   const classes = useStyles();
 
@@ -67,11 +64,10 @@ const LoginFormMaterial = (propsm) => {
           <LockOpenOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-         Login 
+          Login
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -95,22 +91,23 @@ const LoginFormMaterial = (propsm) => {
                 autoComplete="current-password"
               />
             </Grid>
-           
           </Grid>
           <Button
+            name="AfterLogin"
+            id="AfterLogin"
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onSubmit = {submitHandler}
+            onSubmit={submitHandler}
           >
             Login
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
-               Forgot Password?
+                Forgot Password?
               </Link>
             </Grid>
           </Grid>

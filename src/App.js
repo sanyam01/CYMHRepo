@@ -12,6 +12,10 @@ import SignUp from "./components/Pages/SignUp/SignUp";
 import Login from "./components/Pages/Login/Login";
 import Header from "./components/Pages/Header/Header";
 import HeaderLogo from "./components/Pages/Header/HeaderLogo";
+import Feeling from "./components/Pages/FeelingPage/Feeling";
+import MoodTracker from "./components/Pages/MoodPage/MoodTracker";
+import Journal from "./components/Pages/JournalPage/Journal";
+import ResourcesMaterial from "./components/Pages/Resources/ResourcesMaterial";
 
 
 function App() {
@@ -37,6 +41,17 @@ function App() {
             <AfterLogin/>
           </Route>
 
+          <Route path = "/Journal">
+            <HeaderLogo/>
+            <Journal/>
+          </Route>
+
+          <Route path="/Feeling">
+            <HeaderLogo/>
+            <HomePage/>
+            <Feeling/>
+          </Route>
+
           <Route path="/home">
           <Header/>
             <HomePage />
@@ -52,13 +67,19 @@ function App() {
           <Route path="/resources">
           <Header/>
             <HomePage />
-            <Resources />
+            <ResourcesMaterial/>
           </Route>
 
           <Route path="/contact">
           <Header/>
             <HomePage />
             <Contact />
+          </Route>
+
+          <Route path = "/Tracker">
+            <Header/>
+            <HomePage/>
+            <MoodTracker/>
           </Route>
 
           

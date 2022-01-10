@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Summary from "../SummaryPage/Summary";
 import LeftPane from "./LeftPane";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,19 +37,16 @@ const AfterLogin = () => {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
+    <Box m={2} p={2}>
       <Grid container spacing={2} direction="row" alignItems="flex-start">
-        <Grid item lg = {2}>
-         <LeftPane />
+        <Grid item container xs={2}>
+          <LeftPane />
         </Grid>
-        <Grid item lg={10} justifyContent="center">
+        <Grid item container xs={10} justifyContent="center">
           <Summary />
         </Grid>
       </Grid>
-
-      <CssBaseline />
-    </Container>
+    </Box>
   );
 };
 

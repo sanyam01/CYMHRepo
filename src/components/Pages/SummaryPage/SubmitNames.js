@@ -1,16 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import LockOpenOutlinedIcon from "@material-ui/icons/LockOpenOutlined";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Copyright from "./Copyright";
+import Copyright from "../../Forms/Copyright";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,26 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LoginFormMaterial = (props) => {
-  const nameRef = useRef("");
-  const addressRef = useRef("");
-  const orgRef = useRef("");
-  const messageRef = useRef("");
-
-  const submitHandler = (event) => {
-   // event.preventDefault();
-    console.log("Form has been submitted");
-
-    const messageInfo = {
-      name: nameRef.current.value,
-      address: addressRef.current.value,
-      organisation: orgRef.current.value,
-      message: messageRef.current.value,
-    };
-
-    props.onAddMessage(messageInfo);
-  };
-
+const SubmitNames = () => {
   const classes = useStyles();
 
   return (
@@ -59,13 +39,36 @@ const LoginFormMaterial = (props) => {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOpenOutlinedIcon />
+          <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Login
+          Submit Friends Names{" "}
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="lname"
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -77,38 +80,16 @@ const LoginFormMaterial = (props) => {
                 autoComplete="email"
               />
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
           </Grid>
           <Button
-            name="AfterLogin"
-            id="AfterLogin"
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onSubmit={submitHandler}
           >
-            Login
+            Submit
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Forgot Password?
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
       <Box mt={5}>
@@ -118,4 +99,4 @@ const LoginFormMaterial = (props) => {
   );
 };
 
-export default LoginFormMaterial;
+export default SubmitNames;

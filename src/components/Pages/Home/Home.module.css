@@ -1,18 +1,24 @@
-.text{
-    text-align: left;
-    padding-left: 3rem;
-  
+.text {
+  text-align: left;
+  padding-left: 3rem;
 }
 
 .infoBody {
-    
-    border: none;
-    color: black;
-    padding: 20px 40px;
-    text-align: justify;
-    text-decoration: none;
-    font-size: 18px;
-    white-space: pre-wrap;
-    
-    list-style-type: none;
-  }
+  border: none;
+  color: black;
+  padding: 20px 40px;
+  text-align: justify;
+  text-decoration: none;
+  font-size: 18px;
+  white-space: pre-wrap;
+
+  list-style-type: none;
+}
+
+.photo {
+  height: 200px;
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

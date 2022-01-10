@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import classes from "./Home.module.css";
+import VideoDummy from "../../Images/VideoDummy.jpg";
 
 const Home = () => {
   return (
@@ -7,7 +8,7 @@ const Home = () => {
       <div className={classes.infoBody}>
         <p className={classes.text}>
           {" "}
-        Welcome to Children and Youth Mental Health Innovation. Our aim is to
+          Welcome to Children and Youth Mental Health Innovation. Our aim is to
           promote mental wellness and to provide early intervention resources.
           <br></br>
         </p>
@@ -24,6 +25,8 @@ const Home = () => {
           and get connected to people you trust. See the video for an
           illustration and what you will get from this website.
         </p>
+
+        <img className={classes.photo} src={VideoDummy} alt="Logo" />
       </div>
     </Fragment>
   );

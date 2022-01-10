@@ -26,37 +26,32 @@ const LeftPane = () => {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <Grid container spacing={2} direction="column" alignItems="flex-start">
-        <Grid item lg={2}>
-          {" "}
-          <Avatar className={classes.avatar}>
-            <AccountCircleSharpIcon />
-          </Avatar>
-        </Grid>{" "}
-        <Grid item lg={2}>
-          {" "}
-          <Avatar className={classes.avatar}>
-            <HistoryEduSharpIcon />
-          </Avatar>
-        </Grid>{" "}
-        <Grid item lg={2}>
-          {" "}
-          <Avatar className={classes.avatar}>
-            <InsertEmoticonSharpIcon />
-          </Avatar>
-        </Grid>{" "}
-        <Grid item lg={2}>
-          {" "}
-          <Avatar className={classes.avatar}>
-            <PanToolIcon />
-          </Avatar>
-        </Grid>{" "}
-      </Grid>
-
-      <CssBaseline />
-    </Container>
+    <Grid container spacing={2} direction="row" alignItems="flex-start">
+      <Grid item xs={12}>
+        {" "}
+        <Avatar className={classes.avatar}>
+          <AccountCircleSharpIcon />
+        </Avatar>
+      </Grid>{" "}
+      <Grid item xs={12}>
+        {" "}
+        <Avatar className={classes.avatar}>
+          <HistoryEduSharpIcon />
+        </Avatar>
+      </Grid>{" "}
+      <Grid item xs={12}>
+        {" "}
+        <Avatar className={classes.avatar}>
+          <InsertEmoticonSharpIcon />
+        </Avatar>
+      </Grid>{" "}
+      <Grid item xs={12}>
+        {" "}
+        <Avatar className={classes.avatar}>
+          <PanToolIcon />
+        </Avatar>
+      </Grid>{" "}
+    </Grid>
   );
 };
 

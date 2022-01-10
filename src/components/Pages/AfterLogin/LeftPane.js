@@ -30,7 +30,7 @@ const LeftPane = () => {
       <Grid item xs={12}>
         {" "}
         <Avatar className={classes.avatar}>
-          <AccountCircleSharpIcon />
+          <AccountCircleSharpIcon/>
         </Avatar>
       </Grid>{" "}
       <Grid item xs={12}>

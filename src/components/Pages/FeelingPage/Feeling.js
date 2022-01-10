@@ -1,8 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import { Stack } from "@mui/material";
-import Avatar from "@material-ui/core/Avatar";
-import MoodBadIcon from "@mui/icons-material/MoodBad";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import LeftPane from "../AfterLogin/LeftPane";

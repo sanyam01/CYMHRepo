@@ -8,6 +8,8 @@ import { lightBlue, purple } from "@material-ui/core/colors";
 import { Button } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import LeftPane from "../AfterLogin/LeftPane";
+import BoxTemplate from "./BoxTemplate";
+import Entries from "./Entries";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -24,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
   },
 
-  resourceContent: {
+  entriesContent: {
     fontWeight: 600,
     color: purple,
     textDecorationLine: "underline",
-    color: "violet",
+    color: "black",
   },
 
   buttonColor: {
@@ -75,12 +77,30 @@ const Journal = () => {
 
             <Grid item container alignItems="center" justifyContent="center">
               <Grid item xs={6}>
-                <Box xs={6}> Feeling box</Box>
+                <Box xs={6}>
+                  {" "}
+                  <BoxTemplate content="Today I am feeling..." />
+                </Box>
               </Grid>
 
               <Grid item xs={6}>
-                <Box xs={6}> Grateful for</Box>
+                <Box xs={6}>
+                  {" "}
+                  <BoxTemplate content="Today I am grateful for..." />{" "}
+                </Box>
               </Grid>
+            </Grid>
+
+            <Grid item container xs={12} />
+            <Grid item container xs={12} />
+            <Grid item container xs={12} />
+
+            <Grid item container xs={12}>
+              <Typography className = {classes.entriesContent} variant="h5"> My Past Entries</Typography>
+            </Grid>
+
+            <Grid item container xs = {12}>
+              <Entries/>
             </Grid>
           </Grid>
         </Grid>

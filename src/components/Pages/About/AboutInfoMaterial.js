@@ -23,7 +23,7 @@ const AboutInfoMaterial = () => {
             Social Work [FSW] at University of Calgary. This project is being
             done in partnership with Big Brothers and Big Sisters of Lethbridge
             and the Centre for Young Parents to understand and promote wellbeing
-            of children and youth in Lethbridge and Grand Prairie.
+            of children and youth in Lethbridge and Grande Prairie.
           </Typography>
         </Grid>
 

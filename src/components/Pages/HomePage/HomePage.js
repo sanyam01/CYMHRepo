@@ -4,12 +4,9 @@ import Button from "../../UI/Button";
 import classes from "./HomePage.module.css";
 import Header from "../Header/Header";
 
-
 const HomePage = () => {
   return (
     <Fragment>
-
-   
       <div className={classes.header}>
         <Button name="Home" id="home" />
         <Button name="About" id="about" />

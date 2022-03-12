@@ -1,21 +1,17 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import LoginForm from "../../Forms/LoginForm";
 import LoginFormMaterial from "../../Forms/LoginFormMaterial";
 
 const Login = () => {
+  const onSubmitHandler = (props) => {
+    console.log("I am in onAddMessage");
+  };
 
-    const onAddMessageCall = (props) => {
-
-        console.log("I am in onAddMessage");
-      };
-
-    return <Fragment> 
-        <LoginFormMaterial onAddMessage = {onAddMessageCall}/>
-        
-
-
+  return (
+    <Fragment>
+      <LoginFormMaterial submitHandler={onSubmitHandler} />
     </Fragment>
-
+  );
 };
 
 export default Login;

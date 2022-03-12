@@ -17,21 +17,20 @@ import MoodTracker from "./components/Pages/MoodPage/MoodTracker";
 import Journal from "./components/Pages/JournalPage/Journal";
 import ResourcesMaterial from "./components/Pages/Resources/ResourcesMaterial";
 
-
 function App() {
   return (
     <Fragment>
       <div className="App">
         <Switch>
           <Route path="/SignUp">
-          <Header/>
-          <HomePage />
+            <Header />
+            <HomePage />
             <SignUp />
           </Route>
 
           <Route path="/Login">
-          <Header/>
-          <HomePage />
+            <Header />
+            <HomePage />
             <Login />
           </Route>
 
@@ -41,50 +40,52 @@ function App() {
             <AfterLogin/>
           </Route>
 
-          <Route path = "/Journal">
-            <HeaderLogo/>
-            <Journal/>
+         {/* <Route path="/AfterLogin" component = {AfterLogin}/> */}
+          
+
+          <Route path="/Journal">
+            <HeaderLogo />
+            <Journal />
           </Route>
 
           <Route path="/Feeling">
-            <HeaderLogo/>
-            <HomePage/>
-            <Feeling/>
+            <HeaderLogo />
+            <HomePage />
+            <Feeling />
           </Route>
 
           <Route path="/home">
-          <Header/>
+            <Header />
             <HomePage />
             <Home />
           </Route>
 
           <Route path="/about">
-          <Header/>
+            <Header />
             <HomePage />
             <About />
           </Route>
 
           <Route path="/resources">
-          <Header/>
+            <Header />
             <HomePage />
-            <ResourcesMaterial/>
+            <ResourcesMaterial />
           </Route>
 
           <Route path="/contact">
-          <Header/>
+            <Header />
             <HomePage />
             <Contact />
           </Route>
 
-          <Route path = "/Tracker">
-            <Header/>
-            <HomePage/>
-            <MoodTracker/>
+          <Route path="/Tracker">
+            <Header />
+            <HomePage />
+            <MoodTracker />
           </Route>
 
-          
           <Route path="/">
-          <Header/>
+            <Header />
             <HomePage />
             <Home />
           </Route>

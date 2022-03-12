@@ -10,6 +10,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -23,33 +25,70 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const LeftPane = () => {
+
   const classes = useStyles();
+  const [afterClick, setAfterClick] = useState(true);
+  const [journalClick, setJournalClick] = useState(false);
+  const [trackerClick, setTrackerClick] = useState(false);
+  const [feelingClick, setFeelingClick] = useState(false);
+
+  const afterClickHandler = () => {
+    setAfterClick((prevState) => {
+      return prevState ? false : true;
+    });
+  };
+
+  const journalClickHandler = () => {
+    setJournalClick((prevState) => {
+      return prevState ? false : true;
+    });
+  };
+
+  const trackerClickHandler = () => {
+    setTrackerClick((prevState) => {
+      return prevState ? false : true;
+    });
+  };
+
+  const feelingClickHandler = () => {
+    setFeelingClick((prevState) => {
+      return prevState ? false : true;
+    });
+  };
 
   return (
     <Grid container spacing={2} direction="row" alignItems="flex-start">
       <Grid item xs={12}>
         {" "}
-        <Avatar className={classes.avatar}>
-          <AccountCircleSharpIcon/>
-        </Avatar>
+        <NavLink to="/AfterLogin">
+          <Avatar className={classes.avatar} onClick={afterClickHandler}>
+            <AccountCircleSharpIcon  />
+          </Avatar>
+        </NavLink>
       </Grid>{" "}
       <Grid item xs={12}>
         {" "}
-        <Avatar className={classes.avatar}>
-          <HistoryEduSharpIcon />
-        </Avatar>
+        <NavLink to="/Journal">
+          <Avatar className={classes.avatar} onClick={journalClickHandler} >
+            <HistoryEduSharpIcon />
+          </Avatar>
+        </NavLink>
       </Grid>{" "}
       <Grid item xs={12}>
         {" "}
-        <Avatar className={classes.avatar}>
-          <InsertEmoticonSharpIcon />
-        </Avatar>
+        <NavLink to="/Tracker">
+          <Avatar className={classes.avatar} onClick={trackerClickHandler} >
+            <InsertEmoticonSharpIcon />
+          </Avatar>
+        </NavLink>
       </Grid>{" "}
-      <Grid item xs={12}>
+      <Grid item xs={12} to="Feeling">
         {" "}
-        <Avatar className={classes.avatar}>
-          <PanToolIcon />
-        </Avatar>
+        <NavLink to="/Feeling">
+          <Avatar className={classes.avatar} onClick={feelingClickHandler}>
+            <PanToolIcon />
+          </Avatar>
+        </NavLink>
       </Grid>{" "}
     </Grid>
   );

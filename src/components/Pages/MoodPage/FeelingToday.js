@@ -15,6 +15,8 @@ import Stressed from "../../Images/Stressed.jpg";
 import NumberBox from "./NumberBox";
 import { lightBlue, purple } from "@material-ui/core/colors";
 import { Button } from "@material-ui/core";
+import Button1 from "../../UI/Button";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -28,21 +30,21 @@ const useStyles = makeStyles((theme) => ({
   },
 
   typographicContent: {
-    fontWeight : 600,
+    fontWeight: 600,
   },
 
   resourceContent: {
-    fontWeight : 600,
-    color : purple,
-    textDecorationLine : 'underline',
-    color: 'violet',
+    fontWeight: 600,
+    color: purple,
+    textDecorationLine: "underline",
+    color: "violet",
   },
 
-  buttonColor:{
-    color : "blue",
+  buttonColor: {
+    color: "blue",
     backgroundColor: "lightBlue",
-    borderColor : "blue",
-  }
+    borderColor: "blue",
+  },
 }));
 
 const clickedHappyFace = () => {
@@ -150,31 +152,57 @@ const FeelingToday = () => {
           </Typography>
         </Grid>
 
-        <Grid item xs  = {12} container>
-          <Button className = {classes.buttonColor} variant = "outlined" color = "blue" size="large"> Share </Button>
+        <Grid item xs={12} container>
+          <Button
+            className={classes.buttonColor}
+            variant="outlined"
+            color="blue"
+            size="large"
+          >
+            {" "}
+            Share{" "}
+          </Button>
         </Grid>
 
-        <Grid item xs = {12}> </Grid>
-        <Grid item xs = {12}> </Grid>
+        <Grid item xs={12}>
+          {" "}
+        </Grid>
+        <Grid item xs={12}>
+          {" "}
+        </Grid>
 
         <Grid item xs={12} container>
-          <Typography noWrap="false" variant="h5" justifyContent="left" className = {classes.typographicContent}>
+          <Typography
+            noWrap="false"
+            variant="h5"
+            justifyContent="left"
+            className={classes.typographicContent}
+          >
             {" "}
             Not Feeling good? Click below to see the list of resources that may
             be useful.
           </Typography>
         </Grid>
 
-        
-
-        <Grid item xs={12} container>
+        {/* <Grid item xs={12} container>
           <Typography className = {classes.buttonColor} noWrap="false" variant="h5" justifyContent="left" className = {classes.resourceContent}>
             {" "}
             Resources
           </Typography>
+        </Grid> */}
+
+        <Grid item xs={12} container>
+          <NavLink to="/resources">
+            <Button
+              name="resources"
+              fullWidth
+              variant="contained"
+              color="primary"
+            >
+              Resources
+            </Button>
+          </NavLink>
         </Grid>
-
-
       </Grid>
     </Container>
   );

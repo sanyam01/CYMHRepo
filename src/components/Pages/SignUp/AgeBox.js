@@ -66,7 +66,7 @@ const AgeBox = () => {
       >
         <Typography component="h1" variant="h5" >
           {" "}
-          Are you 13 years old?
+          Are you 13 years old and above?
         </Typography>
 
        

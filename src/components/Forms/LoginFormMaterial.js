@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
+import Button from "../UI/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
@@ -11,6 +11,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Copyright from "./Copyright";
+import { NavLink } from "react-router-dom";
+import Button1 from "@mui/material/Button";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -39,7 +41,8 @@ const LoginFormMaterial = (props) => {
   const messageRef = useRef("");
 
   const submitHandler = (event) => {
-   // event.preventDefault();
+    event.preventDefault();
+    event.stopPropagation();
     console.log("Form has been submitted");
 
     const messageInfo = {
@@ -90,18 +93,21 @@ const LoginFormMaterial = (props) => {
               />
             </Grid>
           </Grid>
-          <Button
-            name="AfterLogin"
-            id="AfterLogin"
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onSubmit={submitHandler}
-          >
-            Login
-          </Button>
+          <NavLink to="/AfterLogin">
+            {" "}
+            <Button1
+              name="AfterLogin"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={(event) => {
+                console.log("I am here");
+              }}
+            >
+              Login
+            </Button1>
+          </NavLink>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
